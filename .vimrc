@@ -4,6 +4,9 @@ set number
 " Neuter backspace
 set backspace=indent,eol,start
 
+" Highlight search results
+set hlsearch
+
 " No moar swap files
 set noswapfile
 
