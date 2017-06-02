@@ -7,6 +7,9 @@ set backspace=indent,eol,start
 " Highlight search results
 set hlsearch
 
+" Keep 5 context lines when scrolling
+set scrolloff=5
+
 " No moar swap files
 set noswapfile
 
