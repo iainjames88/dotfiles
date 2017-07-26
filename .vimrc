@@ -64,6 +64,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 "Colour scheme stuff
