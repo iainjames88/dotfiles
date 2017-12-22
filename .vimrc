@@ -61,6 +61,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
+Plug 'crusoexia/vim-monokai'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -70,10 +71,10 @@ call plug#end()
 "Colour scheme stuff
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme monokai
 
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='solarized'
+let g:airline_theme='base16_monokai'
 let g:airline_powerline_fonts = 1
 
