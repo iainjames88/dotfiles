@@ -13,9 +13,6 @@ set scrolloff=5
 " No moar swap files
 set noswapfile
 
-" Remap escape
-:imap jk <Esc>
-
 " Tabs -> spaces stuff
 filetype plugin indent on
 " show existing tab with 4 spaces width
