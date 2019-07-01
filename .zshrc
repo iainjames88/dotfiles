@@ -109,3 +109,8 @@ export NVM_DIR="$HOME/.nvm"
 PIPX_BIN_PATH="${HOME}/.local/bin"
 PYENV_SHIMS_PATH="${HOME}/.pyenv/shims"
 export PATH=$PIPX_BIN_PATH:$PYENV_SHIMS_PATH:$PATH
+
+# Try turning off Apple Press & Hold for VSCode
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+# Run this to re-enable it
+# defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true
