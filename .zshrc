@@ -116,3 +116,7 @@ export PATH=$PIPX_BIN_PATH:$PYENV_SHIMS_PATH:$PATH
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # Run this to re-enable it
 # defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true
+
+# Alias for NeoVim
+alias vim="nvim"
+alias vi="nvim"
