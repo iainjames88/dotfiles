@@ -99,6 +99,8 @@ source $ZSH/oh-my-zsh.sh
 export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
 
+# pyenv
+eval "$(pyenv init -)"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
