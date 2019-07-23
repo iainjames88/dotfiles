@@ -22,6 +22,14 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Resize splits
+if bufwinnr(1)
+  map + <C-W>5+
+  map - <C-W>5-
+  map > <C-W>5>
+  map < <C-W>5<
+endif
+
 call plug#begin()
 Plug 'sonph/onehalf'
 Plug 'scrooloose/nerdtree'
@@ -34,3 +42,4 @@ call plug#end()
 
 " NERDtree toggle
 :nnoremap <leader>n :NERDTreeToggle<CR>
+
