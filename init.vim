@@ -16,6 +16,8 @@ set hlsearch                   " highlight search results
 
 :let mapleader = ','          " Remap leader key to comma 
 
+let g:ctrlp_show_hidden = 1    " CtrlP should also show hidden files
+
 " Navigate splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
