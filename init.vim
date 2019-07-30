@@ -32,6 +32,12 @@ if bufwinnr(1)
   map - <C-W>5<
 endif
 
+" Tab navigation
+nnoremap <leader>tl :tabnext<CR>
+nnoremap <leader>th :tabprevious<CR>
+nnoremap <leader>tc :tabnew<CR>
+nnoremap <leader>tx :tabclose<CR>
+
 call plug#begin()
 Plug 'sonph/onehalf'
 Plug 'scrooloose/nerdtree'
