@@ -38,6 +38,11 @@ nnoremap <leader>th :tabprevious<CR>
 nnoremap <leader>tc :tabnew<CR>
 nnoremap <leader>tx :tabclose<CR>
 
+" Buffer navigation
+nnoremap <leader>bl :bnext<CR>
+nnoremap <leader>bh :bprevious<CR>
+nnoremap <leader>bx :bdelete<CR>
+
 call plug#begin()
 Plug 'sonph/onehalf'
 Plug 'scrooloose/nerdtree'
