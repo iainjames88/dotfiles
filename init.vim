@@ -27,9 +27,9 @@ nnoremap <C-H> <C-W><C-H>
 " Resize splits
 if bufwinnr(1)
   map + <C-W>5+
-  map - <C-W>5-
-  map > <C-W>5>
-  map < <C-W>5<
+  map _ <C-W>5-
+  map = <C-W>5>
+  map - <C-W>5<
 endif
 
 call plug#begin()
