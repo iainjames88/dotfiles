@@ -33,14 +33,14 @@ if bufwinnr(1)
 endif
 
 " Tab navigation
-nnoremap <leader>tl :tabnext<CR>
-nnoremap <leader>th :tabprevious<CR>
+nnoremap <leader>tn :tabnext<CR>
+nnoremap <leader>tp :tabprevious<CR>
 nnoremap <leader>tc :tabnew<CR>
 nnoremap <leader>tx :tabclose<CR>
 
 " Buffer navigation
-nnoremap <leader>bl :bnext<CR>
-nnoremap <leader>bh :bprevious<CR>
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
 nnoremap <leader>bx :bdelete<CR>
 
 call plug#begin()
