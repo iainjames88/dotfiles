@@ -120,3 +120,16 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # Alias for NeoVim
 alias vim="nvim"
 alias vi="nvim"
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+
+# Jabba (Java version management)
+#[ -s "/Users/iainmaitland/.jabba/jabba.sh" ] && source "/Users/iainmaitland/.jabba/jabba.sh"
+
+if [ -s "$HOME/.jabba/jabba.sh" ]; then
+  source "$HOME/.jabba/jabba.sh"
+
+  function __jabba_on_cd() {
+    [[ -f "./.jabbarc" ]] && echo "\n☕️⚡️ Setting Jabba JDK from .jabbarc in $PWD: $(cat .jabbarc | tr -d "\n")" && jabba use
+  }
+  chpwd_functions=(${chpwd_functions[@]} "__jabba_on_cd")
+fi
