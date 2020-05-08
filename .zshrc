@@ -122,14 +122,16 @@ alias vim="nvim"
 alias vi="nvim"
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
-# Jabba (Java version management)
-#[ -s "/Users/iainmaitland/.jabba/jabba.sh" ] && source "/Users/iainmaitland/.jabba/jabba.sh"
-
+# Use Jabba to automatically set JDK from .jabbarc
 if [ -s "$HOME/.jabba/jabba.sh" ]; then
   source "$HOME/.jabba/jabba.sh"
 
-  function __jabba_on_cd() {
-    [[ -f "./.jabbarc" ]] && echo "\n☕️⚡️ Setting Jabba JDK from .jabbarc in $PWD: $(cat .jabbarc | tr -d "\n")" && jabba use
+  function __jabba_use {
+    [[ -f "./.jabbarc" ]] && echo "\n☕️ Jabba using $(cat .jabbarc)" && jabba use
   }
-  chpwd_functions=(${chpwd_functions[@]} "__jabba_on_cd")
+
+  # run __jabba_use every on every cd to a new dir
+  chpwd_functions=(${chpwd_functions[@]} "__jabba_use")
+
+  __jabba_use
 fi
