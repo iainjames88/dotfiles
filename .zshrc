@@ -8,7 +8,7 @@ export ZSH="/Users/iainmaitland/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+#ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -62,7 +62,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,12 +99,15 @@ source $ZSH/oh-my-zsh.sh
 export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
 
+# https://starship.rs/
+eval "$(starship init zsh)"
+
 # pyenv
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 
 # NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Configure $PATH for pipx and pyenv
 # (basically make sure the pipx bin dir is searched before pyenv shims dir)
@@ -113,29 +116,29 @@ export NVM_DIR="$HOME/.nvm"
 #export PATH=$PIPX_BIN_PATH:$PYENV_SHIMS_PATH:$PATH
 
 # Try turning off Apple Press & Hold for VSCode
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+#defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # Run this to re-enable it
 # defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true
 
 # Alias for NeoVim
 alias vim="nvim"
 alias vi="nvim"
-export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
 # Use Jabba to automatically set JDK from .jabbarc
-if [ -s "$HOME/.jabba/jabba.sh" ]; then
-  source "$HOME/.jabba/jabba.sh"
-
-  function __jabba_use {
-    [[ -f "./.jabbarc" ]] && echo "\n☕️ Jabba using $(cat .jabbarc)" && jabba use
-  }
-
-  # run __jabba_use every on every cd to a new dir
-  chpwd_functions=(${chpwd_functions[@]} "__jabba_use")
-
-  __jabba_use
-fi
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/grapplercat-autocomplete grapplercat
-export PATH="/usr/local/opt/yq@3/bin:$PATH"
+#if [ -s "$HOME/.jabba/jabba.sh" ]; then
+#  source "$HOME/.jabba/jabba.sh"
+#
+#  function __jabba_use {
+#    [[ -f "./.jabbarc" ]] && echo "\n☕️ Jabba using $(cat .jabbarc)" && jabba use
+#  }
+#
+#  # run __jabba_use every on every cd to a new dir
+#  chpwd_functions=(${chpwd_functions[@]} "__jabba_use")
+#
+#  __jabba_use
+#fi
+#
+#autoload -U +X bashcompinit && bashcompinit
+#complete -o nospace -C /usr/local/bin/grapplercat-autocomplete grapplercat
+#export PATH="/usr/local/opt/yq@3/bin:$PATH"
+#export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
