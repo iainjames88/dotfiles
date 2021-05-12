@@ -108,9 +108,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # Configure $PATH for pipx and pyenv
 # (basically make sure the pipx bin dir is searched before pyenv shims dir)
-PIPX_BIN_PATH="${HOME}/.local/bin"
-PYENV_SHIMS_PATH="${HOME}/.pyenv/shims"
-export PATH=$PIPX_BIN_PATH:$PYENV_SHIMS_PATH:$PATH
+#PIPX_BIN_PATH="${HOME}/.local/bin"
+#PYENV_SHIMS_PATH="${HOME}/.pyenv/shims"
+#export PATH=$PIPX_BIN_PATH:$PYENV_SHIMS_PATH:$PATH
 
 # Try turning off Apple Press & Hold for VSCode
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
@@ -135,3 +135,7 @@ if [ -s "$HOME/.jabba/jabba.sh" ]; then
 
   __jabba_use
 fi
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/grapplercat-autocomplete grapplercat
+export PATH="/usr/local/opt/yq@3/bin:$PATH"
