@@ -103,11 +103,25 @@ export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
 eval "$(starship init zsh)"
 
 # pyenv
-#eval "$(pyenv init -)"
+eval "$(pyenv init -)"
 
 # NVM
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+function initnvm() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+}
+
+function initjabba() {
+    source "$HOME/.jabba/jabba.sh"
+}
+
+function cellsproxy() {
+    docker run -ti -p 8000:80 -e ACCOUNT='cells-1' 325714046698.dkr.ecr.eu-west-1.amazonaws.com/k8s-addons/secure-dev-proxy
+}
+
+function cellslogin() {
+    sed -i .bak '/access-token/d' ~/.kube/config && kubens
+}
 
 # Configure $PATH for pipx and pyenv
 # (basically make sure the pipx bin dir is searched before pyenv shims dir)
@@ -142,3 +156,7 @@ alias vi="nvim"
 #complete -o nospace -C /usr/local/bin/grapplercat-autocomplete grapplercat
 #export PATH="/usr/local/opt/yq@3/bin:$PATH"
 #export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+#function __pyenv_use {
+#  [[ -f "./.python-version" ]] && echo "Found a .python-version file"
+#}
+#chpwd_functions=(${chpwd_functions[@]} "__pyenv_use")
